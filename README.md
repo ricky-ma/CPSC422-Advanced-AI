@@ -9,4 +9,9 @@ This is an advanced AI course that builds on the foundations of CPSC 322 to show
 - Value of information
 - Value of control
 - Value iteration
-- Belief state update in a partially observable Markov decision process (POMDP)
+- Belief state updates in a partially observable Markov decision process (POMDP)
+
+### A2
+- Reinforcement learning (Q-learning)
+- Approximate reasoning in belief networks (rejection sampling, likelihood weighting)
+- Temporal reasoning in belief networks (smoothing, Viterbi)
