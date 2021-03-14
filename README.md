@@ -15,3 +15,9 @@ This is an advanced AI course that builds on the foundations of CPSC 322 to show
 - Reinforcement learning (Q-learning)
 - Approximate reasoning in belief networks (rejection sampling, likelihood weighting)
 - Temporal reasoning in belief networks (smoothing, Viterbi)
+
+### A3
+- Inference in Markov networks (variable elimination, Gibbs sampling)
+- Resolution in propositional logic
+- WalkSAT and 3-satisfiability
+- Semantics of first-order logic
