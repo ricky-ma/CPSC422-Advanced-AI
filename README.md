@@ -21,3 +21,9 @@ This is an advanced AI course that builds on the foundations of CPSC 322 to show
 - Resolution in propositional logic
 - WalkSAT and 3-satisfiability
 - Semantics of first-order logic
+
+### A4
+- Similarity metrics in ontologies
+- Estimating probabilities context-free grammar
+- Most likely parse with PCFGs
+- IBM Watson: applied AI representation and reasoning methods
