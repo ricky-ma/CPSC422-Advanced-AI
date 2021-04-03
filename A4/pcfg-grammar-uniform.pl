@@ -13,13 +13,13 @@ $grammar{"school"} = ["NP"];
 @start = ("S");
 
 $prob{"S -> NP VP"}   = 1;
-$prob{"VP -> V NP"}   = 0.7692;
-$prob{"VP -> VP PP"}  = 0.2308;
+$prob{"VP -> V NP"}   = 0.5;
+$prob{"VP -> VP PP"}  = 0.5;
 $prob{"PP -> P NP"}   = 1;
-$prob{"NP -> NP PP"}  = 0.04;
-$prob{"NP -> John"}   = 0.4;
-$prob{"NP -> soccer"} = 0.4;
-$prob{"NP -> school"} = 0.16;
+$prob{"NP -> NP PP"}  = 0.25;
+$prob{"NP -> John"}   = 0.25;
+$prob{"NP -> soccer"} = 0.25;
+$prob{"NP -> school"} = 0.25;
 $prob{"V -> plays"}   = 1;
 $prob{"P -> at"}      = 1;
 
