@@ -13,20 +13,13 @@ corpus = '''
 (S (NP /John/) (VP (V /plays/) (NP /soccer/)))
 '''
 
-total_s = corpus.count('(S ')
-total_vp = corpus.count('(VP ')
-total_pp = corpus.count('(PP ')
-total_np = corpus.count('(NP ')
-total_v = corpus.count('(V ')
-total_p = corpus.count('(P ')
-print(total_s, total_vp, total_pp, total_np, total_v, total_p)
+totals = {}
+for pos in ['S', 'VP', 'PP', 'NP', 'V', 'P']:
+    totals[pos] = corpus.count('(' + pos + ' ')
+print(totals)
 
 words = set([x for x in corpus.split('/') if not ' ' in x and not ')' in x])
 print(words)
-
-# words = re.findall(r'\(.+?\)', corpus)
-# words = [x for x in words if x.count('(') == x.count(')')]
-# print(words)
 
 # Get all substrings of the corpus
 phrases = [corpus[i: j] for i in range(len(corpus))
@@ -40,7 +33,6 @@ phrases = [x for x in phrases if
            x[-1] == ')' and
            x.count('(') % 2 == 1 and
            (x[3] == '(' or x[4] == '(' or x[5] == '(' or x.count('(') == 1)]
-print(phrases)
 print(len(phrases))
 
 counts = {}
@@ -56,13 +48,20 @@ for phrase in phrases:
         except KeyError as e:
             counts[part_of_speech + '_' + word] = 1
 
-    if phrase.count('(') == 3:
+    # Get count of two-part phrase
+    else:
         phrase = phrase[len(part_of_speech) + 2:]
         pos1, *_ = re.findall('\((.*?) ', phrase)
-        phrase = phrase[len(part_of_speech) + 2:]
+        phrase = phrase[len(pos1) + 2:]
         pos2, *_ = re.findall('\((.*?) ', phrase)
         try:
             counts[part_of_speech + '_' + pos1 + '_' + pos2] += 1
         except KeyError as e:
             counts[part_of_speech + '_' + pos1 + '_' + pos2] = 1
 print(counts)
+
+grammar = {}
+for pos in counts.keys():
+    main_pos = pos.split('_')[0]
+    grammar[pos] = counts[pos]/totals[main_pos]
+print(grammar)
