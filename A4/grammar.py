@@ -50,6 +50,7 @@ for phrase in phrases:
 
     # Get count of two-part phrase
     else:
+        # TODO: fix calculation for V_VP_PP
         phrase = phrase[len(part_of_speech) + 2:]
         pos1, *_ = re.findall('\((.*?) ', phrase)
         phrase = phrase[len(pos1) + 2:]
